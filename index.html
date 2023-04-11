@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TEST ENV</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="waldo-container">
+        <div class="form">
+            <h1>Generateor: Where is Waldo ?</h1>
+            <p id="time">Time: <span></span> s</p>
+            <label for="diff">Difficulty</label>
+            <input name="diff" type="range" min="10" max="40" value="20">
+            <button>Generate</button>
+        </div>
+        <table class="waldo-table"></table>
+    </div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    $('button').on('click', () => {
+        let t = new Date(); 
+        let xy = $('input').val();
+        let table = new Table(xy,xy,t);
+        table.generateTable();
+    })
+</script>
